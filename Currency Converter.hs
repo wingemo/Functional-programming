@@ -4,7 +4,7 @@
 --
 -- Examples:
 --   [EUR,SEK,30]    ==> 306kr
---   eitherDiv 4 0   ==> Left "4/0"
+--   [[EUR,SEK,30], [EUR,SEK,30]] ==>
 
 import Data.List
 import System.IO
