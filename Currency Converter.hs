@@ -7,6 +7,7 @@
 --   eitherDiv 4 0   ==> Left "4/0"
 
 import Data.List
+import Network.HTTP
 
 data Request = Request String String Float deriving (Show)  
 
@@ -31,8 +32,6 @@ calculator (Request _ _ amount ) = [amount * (rate Request)]
 rate :: Request -> float 
 rate (Request base quote _ ) = todo
 
--- SIMPLE HTTPS GET
-simpleHttpsGet :: IO ()
-simpleHttpsGet = do
-    response <- httpLbs "https://httpbin.org/get"
-    print (getResponseBody response)
+-- Perform a basic HTTP get request and return the body
+httpRequest :: String -> IO String
+httpRequest url = simpleHTTP (getRequest url) >>= getResponseBody
