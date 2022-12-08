@@ -1,3 +1,5 @@
+-- Celsius->Fahrenheit
+
 -module(tut17).
 
 -export([start_client/2, start_worker/0,  ping/2, pong/0]).
