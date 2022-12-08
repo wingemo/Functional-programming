@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
 -- Calculate exchange rates
--- @Philip Wingemo
+-- author: Philip Wingemo
 --
 -- Examples:
 --   [EUR,SEK,30]    ==> 306kr
