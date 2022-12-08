@@ -8,7 +8,7 @@ main = do
 -- It takes a list of currencies and values
 -- that will become converted
 converter :: [a] -> [a]
-converter (base:quote:value) = value * (rates base quote)
+converter (base:quote:value) = value * (rate base quote)
 
 rate :: String -> String -> float 
 rate base quote = todo
