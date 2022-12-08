@@ -7,7 +7,6 @@
 --   eitherDiv 4 0   ==> Left "4/0"
 
 import Data.List
-import Network.HTTP
 import System.IO
 
 data Request = Request String String Float deriving (Show)  
@@ -28,4 +27,4 @@ rate :: Request -> float
 rate (Request base quote _ ) 
     | base == "EUR" && quote == "SEK" = 10.9 
     | base == "DOL" && quote == "SEK" = 12  
-    | 
+    | otherwise
