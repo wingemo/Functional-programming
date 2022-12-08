@@ -25,7 +25,11 @@ calc :: Request -> float -> float
 calc (Request _ _ amount ) = [amount * (rate Request)]
 
 rate :: Request -> float 
-rate (Request base quote _ ) = todo
+rate (Request base quote _ ) = tod
 
-httpRequest :: String -> IO String
-httpRequest url = simpleHTTP (getRequest url) >>= getResponseBody
+data :: Request -> float 
+data (Request base quote _ ) 
+    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"  
+    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"  
+    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"  
+    | otherwise                   = 0
