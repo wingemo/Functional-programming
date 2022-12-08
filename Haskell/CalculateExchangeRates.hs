@@ -9,7 +9,8 @@
 import Data.List
 import System.IO
 
-data Request = Request String String Float deriving (Show)  
+data Request = Request String String Float
+    deriving (Show)  
 
 main = do  
     putStrLn "Calculate exchange rates"  
