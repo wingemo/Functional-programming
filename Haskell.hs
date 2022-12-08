@@ -1,4 +1,4 @@
 main = do  
-    putStrLn "Hello, what's your name?"  
+    putStrLn "Currency Converter"  
     name <- getLine  
      
