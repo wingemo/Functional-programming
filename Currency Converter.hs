@@ -8,6 +8,7 @@
 
 import Data.List
 import Network.HTTP
+import System.IO
 
 data Request = Request String String Float deriving (Show)  
 
