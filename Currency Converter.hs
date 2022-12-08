@@ -14,8 +14,8 @@ data Request = Request String String Float deriving (Show)
 
 main = do  
     putStrLn "Calculate exchange rates"  
-    fxList <- getLine  
-    putStrLn (converter (fxList))
+    requestList <- getLine  
+    putStrLn (converter (requestList))
 
 converter :: [[a]] -> [[a]]
 converter (base:quote:amount) = calc (Request base quote amount)
