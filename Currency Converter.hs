@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- Calculate exchange rates with live data. 
+-- Calculate exchange rates
 -- @Philip Wingemo
 --
 -- Examples:
@@ -25,11 +25,7 @@ calc :: Request -> float -> float
 calc (Request _ _ amount ) = [amount * (rate Request)]
 
 rate :: Request -> float 
-rate (Request base quote _ ) = tod
-
-data :: Request -> float 
-data (Request base quote _ ) 
-    | weight / height ^ 2 <= 18.5 = "You're underweight, you emo, you!"  
-    | weight / height ^ 2 <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"  
-    | weight / height ^ 2 <= 30.0 = "You're fat! Lose some weight, fatty!"  
-    | otherwise                   = 0
+rate (Request base quote _ ) 
+    | base == "EUR" && quote == "SEK" = 10.9 
+    | base == "DOL" && quote == "SEK" = 12  
+    | 
