@@ -1,8 +1,9 @@
 import Data.List
 
 main = do  
-    putStrLn "Currency Converter"  
-    name <- getLine  
+    putStrLn "FX Converter"  
+    fxList <- getLine  
+    putStrLn(converter (fxList))
      
 converter :: [a] -> [a]
 converter [a] = todo
