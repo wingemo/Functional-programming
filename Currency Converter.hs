@@ -8,12 +8,12 @@
 
 import Data.List
 
+data Request = Request String String Float deriving (Show)  
+
 main = do  
     putStrLn "FX Converter"  
     fxList <- getLine  
     putStrLn (converter (fxList))
-
-data Request = Request String String Float deriving (Show)  
 
 -- It takes a list of currencies and values
 -- that will become converted
