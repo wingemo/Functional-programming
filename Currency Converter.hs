@@ -21,9 +21,13 @@ converter :: [[a]] -> [[a]]
 converter (base:quote:amount) = [amount * (rate base quote)]
 converter [] -> error "empty list"
 
+-- It takes a list of currencies and values
+-- that will become converted
 calculator :: Request -> float -> float
 calculator (Request _ _ amount ) rate = amount * rate
 
+-- It takes a list of currencies and values
+-- that will become converted
 rate :: Request -> float 
 rate (Request base quote _ ) = todo
 
