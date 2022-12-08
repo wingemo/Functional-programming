@@ -7,7 +7,7 @@ ping(0, Pong_Node) ->
     io:format("ping finished~n", []);
 
 ping(N, Pong_Node) ->
-    {pong, Pong_Node} ! {ping, self()},
+    {pong, Pong_Node} ! {ping, N, self()},
     receive
         pong ->
             io:format("Ping received pong~n", [])
@@ -18,8 +18,8 @@ pong() ->
     receive
         finished ->
             io:format("Pong finished~n", []);
-        {ping, Ping_PID} ->
-            io:format("Pong received ping~n", []),
+        {ping, N, Ping_PID} ->
+            io:format("Pong received ping: ~w~n", [N]),
             Ping_PID ! pong,
             pong()
     end.
