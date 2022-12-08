@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
--- Ex 10: another variant of safe division. This time you should use
--- Either to return a string error message.
+-- Calculate exchange rates with live data.
+-- An exchange rate is how much it costs to exchange one currency for another. 
 --
 -- Examples:
 --   [EUR,SEK,30]    ==> 306kr
