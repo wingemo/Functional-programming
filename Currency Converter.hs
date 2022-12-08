@@ -18,11 +18,11 @@ main = do
     putStrLn (converter (fxList))
 
 converter :: [[a]] -> [[a]]
-converter (base:quote:amount) = calculator (Request base quote amount)
+converter (base:quote:amount) = calc (Request base quote amount)
 converter [] -> error "empty list"
 
-calculator :: Request -> float -> float
-calculator (Request _ _ amount ) = [amount * (rate Request)]
+calc :: Request -> float -> float
+calc (Request _ _ amount ) = [amount * (rate Request)]
 
 rate :: Request -> float 
 rate (Request base quote _ ) = todo
