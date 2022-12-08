@@ -13,7 +13,7 @@ main = do
     fxList <- getLine  
     putStrLn (converter (fxList))
 
-data Ask = Ask String String Float deriving (Show)  
+data Request = Request String String Float deriving (Show)  
 
 -- It takes a list of currencies and values
 -- that will become converted
@@ -21,8 +21,11 @@ converter :: [[a]] -> [[a]]
 converter (base:quote:amount) = [amount * (rate base quote)]
 converter [] -> error "empty list"
 
-rate :: Ask -> float 
-rate (Ask base quote _ ) = todo
+calculator :: Request -> float -> float
+calculator (Request _ _ amount ) rate = amount * rate
+
+rate :: Request -> float 
+rate (Request base quote _ ) = todo
 
 -- SIMPLE HTTPS GET
 simpleHttpsGet :: IO ()
