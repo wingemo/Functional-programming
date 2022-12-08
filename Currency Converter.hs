@@ -3,7 +3,7 @@
 -- Either to return a string error message.
 --
 -- Examples:
---   eitherDiv 4 2   ==> Right 2
+--   [EUR,SEK,30]    ==> 306kr
 --   eitherDiv 4 0   ==> Left "4/0"
 
 import Data.List
