@@ -13,7 +13,7 @@ pong() ->
     receive
         {ping, Temp, Ping_PID} ->
             io:format("Received request~n", []),
-            Ping_PID ! {pong, (Temp - 32) * 5 / 9},
+            Ping_PID ! {pong, ((Temp - 32) * 5 / 9)},
             pong()
     end.
 
