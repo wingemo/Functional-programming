@@ -22,7 +22,7 @@ converter (base:quote:amount) = calculator (Request base quote amount)
 converter [] -> error "empty list"
 
 calculator :: Request -> float -> float
-calculator (Request _ _ amount ) = [amount * (rate
+calculator (Request _ _ amount ) = [amount * (rate Request)]
 
 rate :: Request -> float 
 rate (Request base quote _ ) = todo
