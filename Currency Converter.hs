@@ -18,13 +18,13 @@ main = do
 -- It takes a list of currencies and values
 -- that will become converted
 converter :: [[a]] -> [[a]]
-converter (base:quote:amount) = [amount * (rate base quote)]
+converter (base:quote:amount) = calculator (Request base quote amount)
 converter [] -> error "empty list"
 
 -- It takes a list of currencies and values
 -- that will become converted
 calculator :: Request -> float -> float
-calculator (Request _ _ amount ) rate = amount * rate
+calculator (Request _ _ amount ) = [amount * (rate Request)]
 
 -- It takes a list of currencies and values
 -- that will become converted
