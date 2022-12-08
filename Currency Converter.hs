@@ -15,8 +15,8 @@ main = do
 
 -- It takes a list of currencies and values
 -- that will become converted
-converter :: [a] -> [a]
-converter (base:quote:amount) = amount * (rate base quote)
+converter :: [[a]] -> [[a]]
+converter (base:quote:amount) = [amount * (rate base quote)]
 converter [] -> error "empty list"
 
 rate :: String -> String -> float 
