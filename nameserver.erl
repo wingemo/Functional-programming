@@ -15,9 +15,6 @@ handle_call(State, {set, {Name, Address}}) ->
     ets:insert(name_server, {Name, Address}),
     {reply, State, ok}.
 
-    %% InitFun = fun () -> 
-
-    %% 	      end,
 handle_init() ->
     ets:new(name_server, [set, private, named_table]).
 
