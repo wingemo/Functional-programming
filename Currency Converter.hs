@@ -21,8 +21,8 @@ converter :: [[a]] -> [[a]]
 converter (base:quote:amount) = [amount * (rate base quote)]
 converter [] -> error "empty list"
 
-rate :: String -> String -> float 
-rate base quote = todo
+rate :: Ask -> float 
+rate (Ask base quote _ ) = todo
 
 -- SIMPLE HTTPS GET
 simpleHttpsGet :: IO ()
