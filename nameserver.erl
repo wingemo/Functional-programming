@@ -25,4 +25,4 @@ set(S, Name, Address) ->
     gen_server1:call(S, {set, {Name, Address}}).
 
 get(S, Name) when is_pid(S) ->
-    gen_server1:call(S, {get, Name
+    gen_server1:call(S, {get, Name}).
