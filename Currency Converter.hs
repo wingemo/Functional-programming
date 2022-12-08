@@ -17,22 +17,15 @@ main = do
     fxList <- getLine  
     putStrLn (converter (fxList))
 
--- It takes a list of currencies and values
--- that will become converted
 converter :: [[a]] -> [[a]]
 converter (base:quote:amount) = calculator (Request base quote amount)
 converter [] -> error "empty list"
 
--- It takes a list of currencies and values
--- that will become converted
 calculator :: Request -> float -> float
-calculator (Request _ _ amount ) = [amount * (rate Request)]
+calculator (Request _ _ amount ) = [amount * (rate
 
--- It takes a list of currencies and values
--- that will become converted
 rate :: Request -> float 
 rate (Request base quote _ ) = todo
 
--- Perform a basic HTTP get request and return the body
 httpRequest :: String -> IO String
 httpRequest url = simpleHTTP (getRequest url) >>= getResponseBody
