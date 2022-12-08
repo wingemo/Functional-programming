@@ -13,6 +13,8 @@ main = do
     fxList <- getLine  
     putStrLn (converter (fxList))
 
+data Quote =  Quote String String Float deriving (Show)  
+
 -- It takes a list of currencies and values
 -- that will become converted
 converter :: [[a]] -> [[a]]
