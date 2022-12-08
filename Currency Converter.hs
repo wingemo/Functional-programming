@@ -13,7 +13,7 @@ import System.IO
 data Request = Request String String Float deriving (Show)  
 
 main = do  
-    putStrLn "FX Converter"  
+    putStrLn "Calculate exchange rates"  
     fxList <- getLine  
     putStrLn (converter (fxList))
 
