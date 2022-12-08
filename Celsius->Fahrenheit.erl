@@ -1,6 +1,6 @@
 -module(tut17).
 
--export([start_ping/1, start_pong/0,  ping/2, pong/0]).
+-export([start_client/2, start_worker/0,  ping/2, pong/0]).
 
 ping(Temp, Pong_Node) ->
     {pong, Pong_Node} ! {ping, Temp, self()},
@@ -17,8 +17,8 @@ pong() ->
             pong()
     end.
 
-start_pong() ->
+start_worker() ->
     register(pong, spawn(tut17, pong, [])).
 
-start_ping(Pong_Node) ->
-    spawn(tut17, ping, [20, Pong_Node]).
+start_client(Temp, Worker) ->
+    spawn(tut17, ping, [Temp, Worker]).
