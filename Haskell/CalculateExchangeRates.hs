@@ -1,31 +1,30 @@
-------------------------------------------------------------------------------
--- Calculate exchange rates
--- author: Philip Wingemo
---
--- Examples:
---   [EUR,SEK,30]    ==> 306kr
---   [[EUR,SEK,30], [EUR,SEK,30]] ==>
-
+-- Import the required modules
+import Text.Printf
 import Data.List
-import System.IO
 
-data Request = Request String String Float
-    deriving (Show)  
+-- Define the exchange rates
+exchangeRates = [("USD", 1.0), ("EUR", 0.88), ("GBP", 0.77), ("INR", 70.0)]
 
-main = do  
-    putStrLn "Calculate exchange rates"  
-    requestList <- getLine  
-    putStrLn (converter (requestList))
+-- Function to convert a given amount in one currency to another
+convert :: (Fractional a) => a -> String -> String -> a
+convert amount fromCurrency toCurrency = amount * (fromCurrencyExchangeRate / toCurrencyExchangeRate)
+  where
+    fromCurrencyExchangeRate = head [exchangeRate | (currency, exchangeRate) <- exchangeRates, currency == fromCurrency]
+    toCurrencyExchangeRate = head [exchangeRate | (currency, exchangeRate) <- exchangeRates, currency == toCurrency]
 
-converter :: [[a]] -> [[a]]
-converter (base:quote:amount) = calc (Request base quote amount)
-converter [] -> error "empty list"
+-- Main function
+main = do
+  -- Read the amount and the currencies from the user
+  putStrLn "Enter the amount to be converted:"
+  amountStr <- getLine
+  let amount = read amountStr :: Double
 
-calc :: Request -> float -> float
-calc (Request _ _ amount ) = [amount * (rate Request)]
+  putStrLn "Enter the currency to convert from:"
+  fromCurrency <- getLine
 
-rate :: Request -> float 
-rate (Request base quote _ ) 
-    | base == "EUR" && quote == "SEK" = 10.9 
-    | base == "DOL" && quote == "SEK" = 12  
-    | otherwise
+  putStrLn "Enter the currency to convert to:"
+  toCurrency <- getLine
+
+  -- Convert the amount and print the result
+  let convertedAmount = convert amount fromCurrency toCurrency
+  printf "%.2f %s is equivalent to %.2f %s\n" amount fromCurrency convertedAmount toCurrency
